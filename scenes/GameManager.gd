@@ -21,5 +21,9 @@ func _on_player_stairs_found():
 
 
 func _on_player_won():
-	print("player won o/")
 	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func _on_give_up_button_pressed():
+	get_tree().quit()
