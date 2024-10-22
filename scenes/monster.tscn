@@ -16,3 +16,6 @@ shape = SubResource("CapsuleShape3D_h6f63")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07609, 0)
 mesh = SubResource("CapsuleMesh_qpmwe")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
