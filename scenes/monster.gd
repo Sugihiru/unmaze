@@ -6,6 +6,10 @@ var target: Node3D = null
 var vel = Vector3()
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
+@onready var attack_area: Area3D = $AttackArea
+
+func _ready():
+	attack_area.connect("body_entered", on_hit_player)
 
 func _physics_process(delta):
 	if target == null:
@@ -20,3 +24,7 @@ func _physics_process(delta):
 	
 	velocity = velocity.lerp(direction * mvt_speed, acceleration * delta)
 	move_and_slide()
+	look_at(nav.target_position)
+
+func on_hit_player(body):
+	print("hit", body.name)

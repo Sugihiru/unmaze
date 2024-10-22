@@ -40,6 +40,12 @@ right={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Level"
+3d_physics/layer_3="Players"
+3d_physics/layer_4="Monsters"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

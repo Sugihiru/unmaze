@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtm4ycc6nit3v"]
+
+[ext_resource type="Script" path="res://FlashingLight.gd" id="1_p38sh"]
+
+[node name="FlashingLight" type="SpotLight3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_p38sh")
