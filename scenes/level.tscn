@@ -19,7 +19,6 @@ glow_blend_mode = 1
 glow_hdr_threshold = 0.5
 
 [node name="Level" type="Node3D"]
-script = ExtResource("3_2m4gt")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_thhcc")
@@ -51,4 +50,8 @@ environment = SubResource("Environment_racut")
 [node name="Stairs" parent="." instance=ExtResource("6_ueonn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85655, 1.37713, -0.760725)
 
-[connection signal="stairs_found" from="Player" to="." method="_on_player_stairs_found"]
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("3_2m4gt")
+
+[connection signal="stairs_found" from="Player" to="GameManager" method="_on_player_stairs_found"]
+[connection signal="player_won" from="GameManager" to="GameManager" method="_on_player_won"]
