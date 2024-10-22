@@ -5,6 +5,17 @@ var speed = 5
 var jump_speed = 5
 var mouse_sensitivity = 0.002
 
+@onready var collider = $Collider
+
+signal stairs_found
+
+func _ready():
+	collider.connect("area_entered", on_area_entered)
+
+func on_area_entered(area):
+	if area.is_in_group("stairs"):
+		emit_signal("stairs_found")
+
 func _input(event):
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyysgbygwky06"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_168bx"]
+size = Vector3(1.26928, 1, 1.25577)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f8f8e"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_nf5bb"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_f8f8e")
+
+[node name="Stairs" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="." groups=["stairs"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24154, 0.577585, 0.000299335)
+shape = SubResource("BoxShape3D_168bx")
+
+[node name="Meshes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00704047, 0, 0)
+
+[node name="MeshInstance1" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 1, 0.35753, 0.223161, 0)
+mesh = SubResource("BoxMesh_nf5bb")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.3, 0, 0, 0, 0.6, 0, 0, 0, 1, 0.0588881, 0.373679, 0)
+mesh = SubResource("BoxMesh_nf5bb")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.3, 0, 0, 0, 0.9, 0, 0, 0, 1, -0.240078, 0.522687, -0.00051415)
+mesh = SubResource("BoxMesh_nf5bb")
+skeleton = NodePath("../..")
