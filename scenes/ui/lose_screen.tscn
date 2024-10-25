@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk8xrxb7gaij7"]
+[gd_scene load_steps=4 format=3 uid="uid://jub4rmako3cu"]
 
-[ext_resource type="Script" path="res://scenes/ui/win_screen.gd" id="1_h51jt"]
-[ext_resource type="LabelSettings" uid="uid://dukhe8fk8x0ha" path="res://scenes/ui/game_over_text_settings.tres" id="1_yl5em"]
-[ext_resource type="Theme" uid="uid://c563ie55vn0vd" path="res://scenes/ui/theme.tres" id="3_f4wep"]
+[ext_resource type="Script" path="res://scenes/ui/lose_screen.gd" id="1_odcta"]
+[ext_resource type="LabelSettings" uid="uid://dukhe8fk8x0ha" path="res://scenes/ui/game_over_text_settings.tres" id="2_gafwx"]
+[ext_resource type="Theme" uid="uid://c563ie55vn0vd" path="res://scenes/ui/theme.tres" id="3_b68pq"]
 
-[node name="WinScreen" type="Control"]
+[node name="LoseScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h51jt")
+script = ExtResource("1_odcta")
 
 [node name="BackgroundColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -38,16 +38,16 @@ alignment = 1
 
 [node name="Label" type="Label" parent="TextVBoxContainer"]
 layout_mode = 2
-text = "Congratulations on finding the exit..."
-label_settings = ExtResource("1_yl5em")
+text = "You got caught"
+label_settings = ExtResource("2_gafwx")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Label2" type="Label" parent="TextVBoxContainer"]
 layout_mode = 2
-text = "But this is not over yet..."
-label_settings = ExtResource("1_yl5em")
+text = "Will you try again to escape ?"
+label_settings = ExtResource("2_gafwx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -62,10 +62,15 @@ offset_top = 340.0
 offset_right = 165.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_f4wep")
+theme = ExtResource("3_b68pq")
+
+[node name="RetryButton" type="Button" parent="ButtonsVBoxContainer"]
+layout_mode = 2
+text = "Retry"
 
 [node name="GiveUpButton" type="Button" parent="ButtonsVBoxContainer"]
 layout_mode = 2
 text = "Give up"
 
+[connection signal="pressed" from="ButtonsVBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="ButtonsVBoxContainer/GiveUpButton" to="." method="_on_give_up_button_pressed"]

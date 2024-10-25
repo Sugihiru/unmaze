@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dr1ox7pslxj56"]
+[gd_scene load_steps=12 format=3 uid="uid://dr1ox7pslxj56"]
 
 [ext_resource type="MeshLibrary" uid="uid://sbwui5c5iiba" path="res://mesh_libraries/meshlib.tres" id="1_882mu"]
 [ext_resource type="PackedScene" uid="uid://dtm4ycc6nit3v" path="res://scenes/levels/props/flashing_light.tscn" id="2_dktbw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/GameManager.gd" id="6_jpp88"]
 [ext_resource type="Script" path="res://scenes/ui/UI.gd" id="7_dlwnu"]
 [ext_resource type="PackedScene" uid="uid://dk8xrxb7gaij7" path="res://scenes/ui/win_screen.tscn" id="8_sy4rm"]
+[ext_resource type="PackedScene" uid="uid://jub4rmako3cu" path="res://scenes/ui/lose_screen.tscn" id="9_vlc2t"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_thhcc"]
 vertices = PackedVector3Array(2.5, 4.5, 0, 2.5, 4.5, 3.75, 3.75, 4.5, 3.75, 4, 4.5, -0.25, -4, 4.5, 6.5, -9.5, 4.5, 7.5, 2, 4.5, 7.5, 6.25, 4.5, 6.5, 0.5, 4.5, -0.25, 2.5, 4.5, 0, 4, 4.5, -0.25, 2, 4.5, -1.5, 8, 4.5, 6.5, 7.75, 4.5, 2.5, 6.5, 4.5, 2.5, 6.25, 4.5, 6.5, 8, 4.5, 6.5, 6.25, 4.5, 6.5, 2, 4.5, 7.5, 13.5, 4.5, 7.5, 4, 4.5, -0.25, 9.75, 4.5, -0.25, 9.75, 4.5, -1.5, 2, 4.5, -1.5, 12.5, 4.5, 6.25, 13.5, 4.5, 7.5, 13.5, 4.5, 0, 12.5, 4.5, -0.25, 12.25, 4.5, -6.25, 12.5, 4.5, -0.25, 13.5, 4.5, 0, 13.5, 4.5, -7.5, 0.25, 4.5, -6.25, 0.5, 4.5, -0.25, 2, 4.5, -1.5, 1.75, 4.5, -6, -9.5, 4.5, -7.5, -8.25, 4.5, -6, 0.25, 4.5, -6.25, 2, 4.5, -7.5, -4.25, 4.5, 0.5, -5.5, 4.5, 0.5, -5.5, 4.5, 6.25, -4, 4.5, 6.5, 12.5, 4.5, 6.25, 8, 4.5, 6.5, 13.5, 4.5, 7.5, -4, 4.5, 6.5, -5.5, 4.5, 6.25, -8, 4.5, 6.5, -9.5, 4.5, 7.5, -8.25, 4.5, -6, -9.5, 4.5, -7.5, -9.5, 4.5, 0, -8.25, 4.5, 0.25, 1.75, 4.5, -6, 12.25, 4.5, -6.25, 13.5, 4.5, -7.5, 2, 4.5, -7.5, 0.25, 4.5, -6.25, -8, 4.5, 6.5, -8.25, 4.5, 0.25, -9.5, 4.5, 0, -9.5, 4.5, 7.5, -3.5, 1.5, -0.5, -3.25, 1.5, 0.25, -0.5, 1.5, 0, -0.5, 1.5, -5.25, -7.25, 1.5, -5.25, -6.5, 1.5, -0.25, -3.5, 1.5, -0.5, -0.5, 1.5, -5.25, -7.25, 1.5, 5.5, -6.5, 1.5, 5.5, -6.5, 1.5, -0.25, -7.25, 1.5, -5.25, 4.25, 1.5, 4.75, 2.75, 1.5, 4.75, 2.75, 1.5, 5.5, 5.5, 1.5, 5.5, 2.75, 1.5, -5.25, 2.75, 1.5, -2.5, 10.75, 1.5, -2.25, 11.5, 1.5, -5.25, 4.75, 1.5, 4.25, 4.25, 1.5, 4.75, 5.5, 1.5, 5.5, 4.75, 1.5, 4.25, 5.5, 1.5, 5.5, 5.75, 1.5, 1.5, 4.75, 1.5, 0.75, 10.75, 1.5, 0.25, 10.25, 1.5, 0.75, 11.5, 1.5, 5.5, 4.75, 1.5, 0.75, 5.75, 1.5, 1.5, 8.5, 1.5, 1.5, 10.25, 1.5, 0.75, 10.75, 1.5, 0.25, 11.5, 1.5, 5.5, 11.5, 1.5, -5.25, 10.75, 1.5, -2.25, 10.25, 1.5, 0.75, 8.5, 1.5, 1.5, 8.75, 1.5, 5.5, 11.5, 1.5, 5.5, 2.75, 1.5, 5.5, 2.75, 1.5, 4.75, 1.5, 1.5, 4.5, -3.25, 1.5, 5.5, -0.25, 1.5, 0.75, -0.5, 1.5, 0, -3.25, 1.5, 0.25, 1.5, 1.5, 4.5, 1.5, 1.5, 0.75, -0.25, 1.5, 0.75, -3.25, 1.5, 5.5, 1.5, 1.5, 4.5, -0.25, 1.5, 0.75, -3.25, 1.5, 0.25)
@@ -46,7 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.92088, 1.16778, -4.81837)
 environment = SubResource("Environment_racut")
 
 [node name="Stairs" parent="." instance=ExtResource("5_6h4k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85655, 1.37713, -0.760725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85655, 1.37713, -4.56639)
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("6_jpp88")
@@ -60,7 +61,14 @@ process_mode = 2
 visible = false
 mouse_filter = 1
 
+[node name="LoseScreen" parent="UI" instance=ExtResource("9_vlc2t")]
+process_mode = 2
+visible = false
+
 [connection signal="stairs_found" from="Player" to="GameManager" method="_on_player_stairs_found"]
+[connection signal="player_hit" from="Monster" to="GameManager" method="_on_monster_player_hit"]
+[connection signal="player_lost" from="GameManager" to="UI" method="_on_game_manager_player_lost"]
 [connection signal="player_won" from="GameManager" to="GameManager" method="_on_player_won"]
 [connection signal="player_won" from="GameManager" to="UI" method="_on_game_manager_player_won"]
 [connection signal="give_up_button_pressed" from="UI/WinScreen" to="GameManager" method="_on_give_up_button_pressed"]
+[connection signal="give_up_button_pressed" from="UI/LoseScreen" to="GameManager" method="_on_give_up_button_pressed"]

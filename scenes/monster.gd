@@ -8,6 +8,8 @@ var vel = Vector3()
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 @onready var attack_area: Area3D = $AttackArea
 
+signal player_hit
+
 func _ready():
 	attack_area.connect("body_entered", on_hit_player)
 
@@ -27,4 +29,4 @@ func _physics_process(delta):
 	look_at(nav.target_position)
 
 func on_hit_player(body):
-	print("hit", body.name)
+	player_hit.emit()
