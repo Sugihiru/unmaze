@@ -1,3 +1,7 @@
 Main Menu Music : https://opengameart.org/content/tragic-ambient-main-menu
 Wall textures : https://ambientcg.com/view?id=Bricks075B
 Maze generator code : https://github.com/Goldenlion5648/GodotMazeGenerationVisualizer / https://www.youtube.com/watch?v=TaQly10bDME
+Player's footsteps : https://freesound.org/people/ConnorM94/sounds/386876/
+Ambiant 1 : https://freesound.org/people/DontDuk/sounds/750905/
+Ambiant 2 : https://freesound.org/people/EvanBoyerman/sounds/753854/
+Ambiant 3 : https://freesound.org/people/Zulfish/sounds/704633/

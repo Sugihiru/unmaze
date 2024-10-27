@@ -47,7 +47,6 @@ transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0.2, 0.45, -0.47)
 mesh = SubResource("SphereMesh_8rtu7")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="AttackArea" type="Area3D" parent="."]
 collision_layer = 0

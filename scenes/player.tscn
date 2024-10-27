@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5gvq6lkofkvo"]
+[gd_scene load_steps=7 format=3 uid="uid://c5gvq6lkofkvo"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_pvj8w"]
+[ext_resource type="AudioStream" uid="uid://deqbg854mo7n3" path="res://sounds/player_footsteps.wav" id="2_enqe3"]
+[ext_resource type="AudioStream" uid="uid://lida3xlu60h3" path="res://sounds/ambiant_1.wav" id="3_qx6ue"]
+[ext_resource type="AudioStream" uid="uid://tcshobabsrb6" path="res://sounds/ambiant_2.wav" id="4_4eivx"]
+[ext_resource type="AudioStream" uid="uid://35nuhevupmbe" path="res://sounds/ambiant_3.wav" id="5_gmev4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_as0xf"]
 
@@ -26,3 +30,26 @@ current = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collider"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00392, 0)
 shape = SubResource("CapsuleShape3D_as0xf")
+
+[node name="Footsteps" type="Node3D" parent="."]
+
+[node name="FootstepsAudioPlayer" type="AudioStreamPlayer3D" parent="Footsteps"]
+stream = ExtResource("2_enqe3")
+
+[node name="FootstepsTimer" type="Timer" parent="Footsteps"]
+one_shot = true
+
+[node name="AmbiantAudios" type="Node3D" parent="."]
+
+[node name="AmbiantTimer" type="Timer" parent="AmbiantAudios"]
+
+[node name="AmbiantAudioPlayer1" type="AudioStreamPlayer3D" parent="AmbiantAudios"]
+stream = ExtResource("3_qx6ue")
+
+[node name="AmbiantAudioPlayer2" type="AudioStreamPlayer3D" parent="AmbiantAudios"]
+stream = ExtResource("4_4eivx")
+
+[node name="AmbiantAudioPlayer3" type="AudioStreamPlayer3D" parent="AmbiantAudios"]
+stream = ExtResource("5_gmev4")
+
+[connection signal="timeout" from="AmbiantAudios/AmbiantTimer" to="." method="_on_ambiant_timer_timeout"]
