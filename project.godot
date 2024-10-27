@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="04_hlab_gamejam02_unmaze"
+config/name="Unmaze"
 run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://game_icon.svg"
 
 [input]
 
