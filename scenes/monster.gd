@@ -28,5 +28,5 @@ func _physics_process(delta):
 	move_and_slide()
 	look_at(nav.target_position)
 
-func on_hit_player(body):
+func on_hit_player(_body):
 	player_hit.emit()

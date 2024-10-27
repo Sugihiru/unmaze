@@ -1,1 +1,3 @@
 Main Menu Music : https://opengameart.org/content/tragic-ambient-main-menu
+Wall textures : https://ambientcg.com/view?id=Bricks075B
+Maze generator code : https://github.com/Goldenlion5648/GodotMazeGenerationVisualizer / https://www.youtube.com/watch?v=TaQly10bDME
