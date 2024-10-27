@@ -94,5 +94,6 @@ visible = false
 [connection signal="player_lost" from="GameManager" to="UI" method="_on_game_manager_player_lost"]
 [connection signal="player_won" from="GameManager" to="GameManager" method="_on_player_won"]
 [connection signal="player_won" from="GameManager" to="UI" method="_on_game_manager_player_won"]
+[connection signal="continue_button_pressed" from="UI/WinScreen" to="GameManager" method="_on_win_screen_continue_button_pressed"]
 [connection signal="give_up_button_pressed" from="UI/WinScreen" to="GameManager" method="_on_give_up_button_pressed"]
 [connection signal="give_up_button_pressed" from="UI/LoseScreen" to="GameManager" method="_on_give_up_button_pressed"]

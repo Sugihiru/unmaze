@@ -34,7 +34,7 @@ func _input(event):
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_dead:
 		return
 
