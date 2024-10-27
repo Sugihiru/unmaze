@@ -4,8 +4,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5
 var jump_speed = 5
 var mouse_sensitivity = 0.002
+var is_dead = false
 
 @onready var collider = $Collider
+@onready var animation_player = $AnimationPlayer
 # Footsteps
 @onready var footsteps_audio_stream_player: AudioStreamPlayer3D = $Footsteps/FootstepsAudioPlayer
 @onready var footsteps_timer: Timer = $Footsteps/FootstepsTimer
@@ -24,13 +26,18 @@ func _ready():
 
 func on_area_entered(area):
 	if area.is_in_group("stairs"):
-		emit_signal("stairs_found")
+		stairs_found.emit()
 
 func _input(event):
+	if is_dead:
+		return
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 
 func _physics_process(delta):
+	if is_dead:
+		return
+
 	var input = Input.get_vector("left", "right", "forward", "back")
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
 	velocity.x = movement_dir.x * speed
@@ -52,3 +59,8 @@ func reset_ambiant_timer():
 func _on_ambiant_timer_timeout():
 	var audio_players = [ambiant_audio_stream_player1, ambiant_audio_stream_player2, ambiant_audio_stream_player3]
 	audio_players.pick_random().play()
+
+
+func _on_monster_player_hit():
+	is_dead = true
+	animation_player.play("death")

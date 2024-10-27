@@ -31,6 +31,7 @@ func _on_give_up_button_pressed():
 
 
 func _on_monster_player_hit():
+	player_lost.emit()
+	await get_tree().create_timer(1.0).timeout
 	get_tree().paused = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	player_lost.emit()

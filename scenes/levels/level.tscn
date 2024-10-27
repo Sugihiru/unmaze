@@ -75,11 +75,21 @@ process_mode = 2
 visible = false
 mouse_filter = 1
 
+[node name="TransitionLoseScreen" type="ColorRect" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.360784)
+
 [node name="LoseScreen" parent="UI" instance=ExtResource("9_vlc2t")]
 process_mode = 2
 visible = false
 
 [connection signal="stairs_found" from="Player" to="GameManager" method="_on_player_stairs_found"]
+[connection signal="player_hit" from="Monster" to="Player" method="_on_monster_player_hit"]
 [connection signal="player_hit" from="Monster" to="GameManager" method="_on_monster_player_hit"]
 [connection signal="player_lost" from="GameManager" to="UI" method="_on_game_manager_player_lost"]
 [connection signal="player_won" from="GameManager" to="GameManager" method="_on_player_won"]
