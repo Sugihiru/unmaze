@@ -53,13 +53,15 @@ vertical_alignment = 1
 
 [node name="ButtonsVBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 13
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -162.0
-offset_top = 340.0
-offset_right = 165.0
+anchor_bottom = 0.5
+offset_left = -163.5
+offset_top = 76.0
+offset_right = 163.5
+offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_f4wep")

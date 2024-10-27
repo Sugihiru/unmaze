@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://scenes/menus/MainMenuUI.gd" id="3_h1gv4"]
 [ext_resource type="AudioStream" uid="uid://cgndpi7ap1307" path="res://scenes/menus/ambientmain_0.ogg" id="4_8g63w"]
 [ext_resource type="Theme" uid="uid://c563ie55vn0vd" path="res://scenes/ui/theme.tres" id="4_erbxf"]
+[ext_resource type="FontFile" uid="uid://mi6r1s1b50tn" path="res://scenes/menus/informal_roman.ttf" id="4_f38ar"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48you"]
 albedo_color = Color(0, 0, 0, 1)
@@ -14,11 +15,8 @@ emission_energy_multiplier = 2.64
 [sub_resource type="BoxMesh" id="BoxMesh_cosim"]
 material = SubResource("StandardMaterial3D_48you")
 
-[sub_resource type="SystemFont" id="SystemFont_xkkqt"]
-font_names = PackedStringArray("Informal Roman")
-
 [sub_resource type="LabelSettings" id="LabelSettings_frqmg"]
-font = SubResource("SystemFont_xkkqt")
+font = ExtResource("4_f38ar")
 font_size = 128
 outline_color = Color(0.133333, 0.133333, 0.133333, 1)
 shadow_size = 16
@@ -59,17 +57,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonsVBoxContainer" type="VBoxContainer" parent="UI/MainScreen"]
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -131.0
-offset_top = -220.0
+offset_top = 60.0
 offset_right = 131.0
-offset_bottom = -67.0
+offset_bottom = 213.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme = ExtResource("4_erbxf")
 
 [node name="PlayButton" type="Button" parent="UI/MainScreen/ButtonsVBoxContainer"]

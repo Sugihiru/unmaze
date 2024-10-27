@@ -15,6 +15,11 @@ run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://game_icon.svg"
 
+[display]
+
+window/icon="res://game_icon.svg"
+window/name="Unmaze"
+
 [input]
 
 forward={
